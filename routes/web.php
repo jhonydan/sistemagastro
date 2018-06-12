@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('contenido/contenido');
 });
+Route::get('/herramienta','herramientaController@index');
+Route::post('/herramienta/registrar','herramientaController@store');
+Route::put('/herramienta/actualizar','herramientaController@update');
+Route::put('/herramienta/desactivar','herramientaController@desactivar');
+Route::put('/herramienta/activar','herramientaController@activar');
