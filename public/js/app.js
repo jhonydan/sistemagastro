@@ -47330,6 +47330,60 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -47368,18 +47422,87 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card card-default" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v("Example Component")
+    return _c("div", { staticClass: "main" }, [
+      _c("div", { staticClass: "main-content" }, [
+        _c("div", { staticClass: "container-fluid" }, [
+          _c("div", { staticClass: "panel panel-headline" }, [
+            _c("div", { staticClass: "panel-heading" }, [
+              _c("h3", { staticClass: "panel-title" }, [
+                _vm._v("Registro de Herramientas")
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "panel-subtitle" }, [
+                _vm._v("Period: Oct 14, 2016 - Oct 21, 2016")
+              ])
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    I'm an example component.\n                "
-              )
+            _c("div", { staticClass: "panel-body" }, [
+              _c("div", { staticClass: "row" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-md-9" }, [
+                  _c("div", {
+                    staticClass: "ct-chart",
+                    attrs: { id: "headline-chart" }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "panel" }, [
+                  _c("div", { staticClass: "panel-heading" }, [
+                    _c("h3", { staticClass: "panel-title" }, [
+                      _vm._v("Basic Table")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "panel-body" }, [
+                    _c("table", { staticClass: "table" }, [
+                      _c("thead", [
+                        _c("tr", [
+                          _c("th", [_vm._v("#")]),
+                          _vm._v(" "),
+                          _c("th", [_vm._v("First Name")]),
+                          _vm._v(" "),
+                          _c("th", [_vm._v("Last Name")]),
+                          _vm._v(" "),
+                          _c("th", [_vm._v("Username")])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("tbody", [
+                        _c("tr", [
+                          _c("td", [_vm._v("1")]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v("Steve")]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v("Jobs")]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v("@steve")])
+                        ]),
+                        _vm._v(" "),
+                        _c("tr", [
+                          _c("td", [_vm._v("2")]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v("Simon")]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v("Philips")]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v("@simon")])
+                        ]),
+                        _vm._v(" "),
+                        _c("tr", [
+                          _c("td", [_vm._v("3")]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v("Jane")]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v("Doe")]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v("@jane")])
+                        ])
+                      ])
+                    ])
+                  ])
+                ])
+              ])
             ])
           ])
         ])

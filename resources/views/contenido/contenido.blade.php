@@ -9,7 +9,6 @@
      </template>
 
      <template v-if="menu==1">
-         <br><br><br> <br><br><br>
     <herramientas></herramientas>
      </template>
 
