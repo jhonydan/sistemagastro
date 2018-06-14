@@ -9,54 +9,48 @@
                         <h3 class="panel-title">Registro de Herramientas</h3>
                         <p class="panel-subtitle">Period: Oct 14, 2016 - Oct 21, 2016</p>
                     </div>
-                    <div class="panel-body">
+                    <div class="animated fadeIn">
                         <div class="row">
+
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <strong class="card-title">Data Table</strong>
+                                    </div>
+                                    <div class="card-body">
+                                        <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                                            <thead>
+                                            <tr>
+
+                                                <th>Nombre</th>
+                                                <th>Imagen</th>
+                                                <th>Cantidad</th>
+                                                <th>Estado</th>
+                                                <th>Accion</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr v-for="herramientas in arrayHerramienta" :key="herramientas.id">
+                                                <td v-text="herramientas.nombre"></td>
+                                                <td><span class="photo media-left"><img alt="avatar" src="images/admin.jpg"></span></td>
+                                                <td v-text="herramientas.cantidad"></td>
+                                                <td v-text="herramientas.condicion"></td>
+                                                <td>
+                                                    <a class="btn btn-primary" href="#" role="button"><i class="fa fa-pencil"></i></a>
+                                                    <a class="btn btn-danger" href="#" role="button"><i class="fa fa-trash-o"></i></a>
+
+                                                </td>
+                                            </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
 
 
                         </div>
-                        <div class="row">
-                            <div class="col-md-9">
-                                <div id="headline-chart" class="ct-chart"></div>
-                            </div>
-                            <div class="panel">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">Basic Table</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <table class="table">
-                                        <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>Username</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Steve</td>
-                                            <td>Jobs</td>
-                                            <td>@steve</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Simon</td>
-                                            <td>Philips</td>
-                                            <td>@simon</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Jane</td>
-                                            <td>Doe</td>
-                                            <td>@jane</td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </div><!-- .animated -->
                 </div>
                 <!-- END OVERVIEW -->
 
@@ -73,12 +67,15 @@
         data(){
             return{
                 nombre : '',
-                cantidad : ''
+                cantidad : '',
+                arrayHerramienta: []
             }
         },
         methods: {
           listarHerramientas(){
+              let me =this;
               axios.get('/herramienta').then(function (response) {
+                    me.arrayHerramienta = response.data;
                       console.log(response);
                   })
                   .catch(function (error) {
@@ -87,7 +84,12 @@
           }
         },
         mounted() {
-            console.log('Component mounted.')
+          this.listarHerramientas();
         }
     }
+
+
+
+
+
 </script>

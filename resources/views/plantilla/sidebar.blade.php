@@ -1,86 +1,75 @@
-             <div id="sidebar-nav" class="sidebar">
-            <div class="sidebar-scroll">
-                <nav>
-                    <ul class="nav">
-                        <li>
-                            <a href="index.html" class="active"><i class="lnr lnr-home"></i> <span>Inicio</span></a>
+<nav class="navbar navbar-expand-sm navbar-default">
 
-                        </li>
-                       <li>
-                            <a href="#subPages1" data-toggle="collapse" class="collapsed"><i class="lnr lnr-alarm"></i> <span>Notificaciones</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-                            <div id="subPages1" class="collapse ">
-                                <ul class="nav">
-                                    <li  @click="menu=0"><a href="#" class="collapsed">Ver notificaciones</a></li>
+    <div class="navbar-header">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa fa-bars"></i>
+        </button>
+        <a class="navbar-brand" href="./"><img src="images/logo.png" alt="Logo"></a>
+        <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
+    </div>
 
-                                </ul>
-                            </div>
-                        </li>
-                      <li>
-                            <a href="#subPages2" data-toggle="collapse" class="collapsed"><i class="lnr lnr-store"></i> <span>Area de cocina</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-                            <div id="subPages2" class="collapse ">
-                                <ul class="nav">
-                                    <li @click="menu=1" ><a href="#" class="">ver herramienta</a></li>
-                                    <li @click="menu=2"><a href="#" class="">ver equipos</a></li>
+    <div id="main-menu" class="main-menu collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+            <li class="active">
+                <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Escritorio </a>
+            </li>
+            <h3 class="menu-title">Cocina</h3><!-- /.menu-title -->
+            <li class="menu-item-has-children dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Herramientas de cocina</a>
+                <ul class="sub-menu children dropdown-menu">
+                    <li @click="menu=1"><i class="fa fa-puzzle-piece"></i><a href="#">Ver Herramientas</a></li>
 
-                                </ul>
-                            </div>
-                        </li>
-                   <li>
-                            <a href="#subPages3" data-toggle="collapse" class="collapsed"><i class="fa fa-glass"></i> <span>Cristaleria</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-                            <div id="subPages3" class="collapse ">
-                                <ul class="nav">
-                                    <li  @click="menu=0"><a href="#" class="">Ver cristaleria</a></li>
 
-                                </ul>
-                            </div>
-                        </li>
-                     <li>
-                            <a href="#subPages4" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>Mueble</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-                            <div id="subPages4" class="collapse ">
-                                <ul class="nav">
-                                    <li  @click="menu=0"><a href="#" class="">Ver mueble</a></li>
 
-                                </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#subPages5" data-toggle="collapse" class="collapsed"><i class="lnr lnr-dinner"></i> <span>Cuberteria</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-                            <div id="subPages5" class="collapse ">
-                                <ul class="nav">
-                                    <li  @click="menu=0"><a href="#" class="">Ver cubiertos</a></li>
+                </ul>
+            </li>
+            <li class="menu-item-has-children dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Equipo de Cocina</a>
+                <ul class="sub-menu children dropdown-menu">
+                    <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">Ver Equipo</a></li>
 
-                                </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#subPages6" data-toggle="collapse" class="collapsed"><i class="lnr lnr-magic-wand"></i> <span>Limpieza</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-                            <div id="subPages6" class="collapse ">
-                                <ul class="nav">
-                                    <li  @click="menu=0"><a href="#" class="">Ver herramienta de limpieza</a></li>
+                </ul>
+            </li>
+            <li class="menu-item-has-children dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Otras herramientas</a>
+                <ul class="sub-menu children dropdown-menu">
+                    <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">Ver Herramientas</a></li>
+                </ul>
+            </li>
 
-                                </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#subPages7" data-toggle="collapse" class="collapsed"><i class="lnr lnr-cross-circle"></i> <span>Piezas danadas</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-                            <div id="subPages7" class="collapse ">
-                                <ul class="nav">
-                                    <li  @click="menu=0"><a href="#" class="">Ver piezas danadas</a></li>
+            <h3 class="menu-title">Cristaleria y Mueble</h3><!-- /.menu-title -->
 
-                                </ul>
-                            </div>
-                        </li>
-                      <li>
-                            <a href="#subPages8" data-toggle="collapse" class="collapsed"><i class="lnr lnr-chart-bars"></i> <span>Periodo de registro</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-                            <div id="subPages8" class="collapse ">
-                                <ul class="nav">
-                                    <li  @click="menu=0"><a href="#" class="">Ver registros por periodo</a></li>
+            <li class="menu-item-has-children dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Cristaleria</a>
+                <ul class="sub-menu children dropdown-menu">
+                    <li><i class="menu-icon fa fa-fort-awesome"></i><a href="font-fontawesome.html">Ver Cristaleria</a></li>
 
-                                </ul>
-                            </div>
-                        </li>
+                </ul>
 
-                    </ul>
-                </nav>
-            </div>
-        </div>
+            </li>
+            <li class="menu-item-has-children dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Mueble</a>
+                <ul class="sub-menu children dropdown-menu">
+                    <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">Ver Mueble</a></li>
+                </ul>
+            </li>
+
+
+            <h3 class="menu-title">Cuberteria y Limpieza</h3><!-- /.menu-title -->
+            <li class="menu-item-has-children dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Cubiertos</a>
+                <ul class="sub-menu children dropdown-menu">
+                    <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">Ver Cubiertos</a></li>
+                    <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">Ver Herramienta de Limpieza</a></li>
+                </ul>
+            </li>
+            <h3 class="menu-title">Piezas dañadas</h3><!-- /.menu-title -->
+            <li class="menu-item-has-children dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Piezas dañadas</a>
+                <ul class="sub-menu children dropdown-menu">
+                    <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">Ver piezas</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div><!-- /.navbar-collapse -->
+</nav>

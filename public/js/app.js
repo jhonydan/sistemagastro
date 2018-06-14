@@ -47378,24 +47378,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
             nombre: '',
-            cantidad: ''
+            cantidad: '',
+            arrayHerramienta: []
         };
     },
 
     methods: {
         listarHerramientas: function listarHerramientas() {
+            var me = this;
             axios.get('/herramienta').then(function (response) {
+                me.arrayHerramienta = response.data;
                 console.log(response);
             }).catch(function (error) {
                 console.log(error);
@@ -47403,7 +47400,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
     },
     mounted: function mounted() {
-        console.log('Component mounted.');
+        this.listarHerramientas();
     }
 });
 
@@ -47415,91 +47412,58 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "main" }, [
-      _c("div", { staticClass: "main-content" }, [
-        _c("div", { staticClass: "container-fluid" }, [
-          _c("div", { staticClass: "panel panel-headline" }, [
-            _c("div", { staticClass: "panel-heading" }, [
-              _c("h3", { staticClass: "panel-title" }, [
-                _vm._v("Registro de Herramientas")
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "panel-subtitle" }, [
-                _vm._v("Period: Oct 14, 2016 - Oct 21, 2016")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "panel-body" }, [
-              _c("div", { staticClass: "row" }),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-md-9" }, [
-                  _c("div", {
-                    staticClass: "ct-chart",
-                    attrs: { id: "headline-chart" }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "panel" }, [
-                  _c("div", { staticClass: "panel-heading" }, [
-                    _c("h3", { staticClass: "panel-title" }, [
-                      _vm._v("Basic Table")
-                    ])
-                  ]),
+  return _c("div", { staticClass: "main" }, [
+    _c("div", { staticClass: "main-content" }, [
+      _c("div", { staticClass: "container-fluid" }, [
+        _c("div", { staticClass: "panel panel-headline" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "animated fadeIn" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-12" }, [
+                _c("div", { staticClass: "card" }, [
+                  _vm._m(1),
                   _vm._v(" "),
-                  _c("div", { staticClass: "panel-body" }, [
-                    _c("table", { staticClass: "table" }, [
-                      _c("thead", [
-                        _c("tr", [
-                          _c("th", [_vm._v("#")]),
-                          _vm._v(" "),
-                          _c("th", [_vm._v("First Name")]),
-                          _vm._v(" "),
-                          _c("th", [_vm._v("Last Name")]),
-                          _vm._v(" "),
-                          _c("th", [_vm._v("Username")])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("tbody", [
-                        _c("tr", [
-                          _c("td", [_vm._v("1")]),
-                          _vm._v(" "),
-                          _c("td", [_vm._v("Steve")]),
-                          _vm._v(" "),
-                          _c("td", [_vm._v("Jobs")]),
-                          _vm._v(" "),
-                          _c("td", [_vm._v("@steve")])
-                        ]),
+                  _c("div", { staticClass: "card-body" }, [
+                    _c(
+                      "table",
+                      {
+                        staticClass: "table table-striped table-bordered",
+                        attrs: { id: "bootstrap-data-table" }
+                      },
+                      [
+                        _vm._m(2),
                         _vm._v(" "),
-                        _c("tr", [
-                          _c("td", [_vm._v("2")]),
-                          _vm._v(" "),
-                          _c("td", [_vm._v("Simon")]),
-                          _vm._v(" "),
-                          _c("td", [_vm._v("Philips")]),
-                          _vm._v(" "),
-                          _c("td", [_vm._v("@simon")])
-                        ]),
-                        _vm._v(" "),
-                        _c("tr", [
-                          _c("td", [_vm._v("3")]),
-                          _vm._v(" "),
-                          _c("td", [_vm._v("Jane")]),
-                          _vm._v(" "),
-                          _c("td", [_vm._v("Doe")]),
-                          _vm._v(" "),
-                          _c("td", [_vm._v("@jane")])
-                        ])
-                      ])
-                    ])
+                        _c(
+                          "tbody",
+                          _vm._l(_vm.arrayHerramienta, function(herramientas) {
+                            return _c("tr", { key: herramientas.id }, [
+                              _c("td", {
+                                domProps: {
+                                  textContent: _vm._s(herramientas.nombre)
+                                }
+                              }),
+                              _vm._v(" "),
+                              _vm._m(3, true),
+                              _vm._v(" "),
+                              _c("td", {
+                                domProps: {
+                                  textContent: _vm._s(herramientas.cantidad)
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("td", {
+                                domProps: {
+                                  textContent: _vm._s(herramientas.condicion)
+                                }
+                              }),
+                              _vm._v(" "),
+                              _vm._m(4, true)
+                            ])
+                          })
+                        )
+                      ]
+                    )
                   ])
                 ])
               ])
@@ -47507,6 +47471,79 @@ var staticRenderFns = [
           ])
         ])
       ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "panel-heading" }, [
+      _c("h3", { staticClass: "panel-title" }, [
+        _vm._v("Registro de Herramientas")
+      ]),
+      _vm._v(" "),
+      _c("p", { staticClass: "panel-subtitle" }, [
+        _vm._v("Period: Oct 14, 2016 - Oct 21, 2016")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-header" }, [
+      _c("strong", { staticClass: "card-title" }, [_vm._v("Data Table")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("Nombre")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Imagen")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Cantidad")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Estado")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Accion")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [
+      _c("span", { staticClass: "photo media-left" }, [
+        _c("img", { attrs: { alt: "avatar", src: "images/admin.jpg" } })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [
+      _c(
+        "a",
+        {
+          staticClass: "btn btn-primary",
+          attrs: { href: "#", role: "button" }
+        },
+        [_c("i", { staticClass: "fa fa-pencil" })]
+      ),
+      _vm._v(" "),
+      _c(
+        "a",
+        { staticClass: "btn btn-danger", attrs: { href: "#", role: "button" } },
+        [_c("i", { staticClass: "fa fa-trash-o" })]
+      )
     ])
   }
 ]
